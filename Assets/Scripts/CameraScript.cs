@@ -5,17 +5,17 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     public GameObject Player;
-    private Vector3 offset;
-
-
-    void Start()
-    {
-        offset = transform.position - Player.transform.position;
-    }
-
+    private float offset;
     
+
+     void Start()
+     {
+        offset = transform.position.x - Player.transform.position.x;    
+     }
+
     void LateUpdate()
     {
-        transform.position = Player.transform.position + offset;
+        transform.position = new Vector3(Player.transform.position.x + offset, transform.position.y, transform.position.z);
     }
+
 }
