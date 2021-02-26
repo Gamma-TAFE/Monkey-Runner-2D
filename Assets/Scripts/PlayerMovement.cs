@@ -8,12 +8,13 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     private float moveInput;
     public Rigidbody2D rb2d;
-
+    bool isgrounded = true;
 
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        
     }
 
 
@@ -25,9 +26,33 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(isgrounded == true)
         {
-            rb2d.velocity = Vector2.up * jumpForce;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb2d.velocity = Vector2.up * jumpForce;
+            }
         }
     }
+
+    void OnCollisionEnter2D(Collision2D oncollision)
+    {
+        if (oncollision.gameObject.tag == "Ground")
+        {
+            isgrounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D offcollision)
+    {
+        if (offcollision.gameObject.tag == "Ground")
+        {
+            isgrounded = false;
+        }
+
+    }
+
+
+
+
 }
