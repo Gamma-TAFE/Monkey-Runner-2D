@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveInput;
     public Rigidbody2D rb2d;
     bool isgrounded = true;
-
+    public GameManagement gameManagement;
 
     void Start()
     {
@@ -41,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
         {
             isgrounded = true;
         }
+
+
+        if (oncollision.gameObject.tag == "EndDevice")
+        {
+            gameManagement.RestartGame();
+        }
     }
 
     void OnCollisionExit2D(Collision2D offcollision)
@@ -52,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
+   
 
 
 }

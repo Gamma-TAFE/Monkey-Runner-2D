@@ -25,10 +25,10 @@ public class GameManagement : MonoBehaviour
 
     public void RestartGame()
     {
-        StartCoroutine("RestartGameCo");
+        StartCoroutine("RestartGameCoroutine");
     }
 
-    public IEnumerator RestartGameCo()
+    public IEnumerator RestartGameCoroutine()
     {
         thePlayer.gameObject.SetActive(false);
         yield return new WaitForSeconds(1.0f);
