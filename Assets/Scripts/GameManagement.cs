@@ -17,12 +17,6 @@ public class GameManagement : MonoBehaviour
         PlayerStartPoint = thePlayer.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void RestartGame()
     {
         StartCoroutine("RestartGameCoroutine");

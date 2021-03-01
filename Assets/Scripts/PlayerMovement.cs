@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        
+
     }
 
 
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(isgrounded == true)
+        if (isgrounded == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -37,28 +37,22 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D oncollision)
     {
-        if (oncollision.gameObject.tag == "Ground")
+        if (oncollision.gameObject.CompareTag("Ground"))
         {
             isgrounded = true;
         }
 
 
-        if (oncollision.gameObject.tag == "EndDevice")
+        if (oncollision.gameObject.CompareTag("EndDevice"))
         {
             gameManagement.RestartGame();
         }
+
     }
 
-    void OnCollisionExit2D(Collision2D offcollision)
+    private void OnCollisionExit2D(Collision2D offcollision)
     {
-        if (offcollision.gameObject.tag == "Ground")
-        {
+        if (offcollision.gameObject.CompareTag("Ground"))
             isgrounded = false;
-        }
-
     }
-
-   
-
-
 }

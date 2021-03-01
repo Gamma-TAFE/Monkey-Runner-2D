@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
-    public float speedBoost =1;
-    public float jumpBoost = 1;
+    public float speedBoost;
+    public float jumpBoost;
 
-    // Start is called before the first frame update
+    public float minIncrease = 5f;
+    public float maxIncrease = 10f;
+    float increase;
+
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        increase = Random.Range(minIncrease, maxIncrease);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
