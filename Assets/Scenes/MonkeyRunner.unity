@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 221163294}
   - component: {fileID: 221163296}
   - component: {fileID: 221163295}
+  - component: {fileID: 221163297}
   m_Layer: 0
   m_Name: Jump
   m_TagString: Jump
@@ -165,7 +166,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00000047683716, y: 0}
@@ -222,6 +223,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &221163297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221163293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4b56088e2518b4099c15e15a5c0fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBoost: 5
+  jumpBoost: 3
+  minIncrease: 5
+  maxIncrease: 10
+  pickUpTime: 10
+  colTime: 0
 --- !u!1 &236004089
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +698,7 @@ GameObject:
   - component: {fileID: 655329095}
   - component: {fileID: 655329097}
   - component: {fileID: 655329096}
+  - component: {fileID: 655329098}
   m_Layer: 0
   m_Name: Speed
   m_TagString: Speed
@@ -710,7 +730,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.00000047683716}
@@ -767,6 +787,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &655329098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655329094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4b56088e2518b4099c15e15a5c0fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBoost: 5
+  jumpBoost: 3
+  minIncrease: 5
+  maxIncrease: 10
+  pickUpTime: 10
+  colTime: 0
 --- !u!1 &666477041
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +838,8 @@ MonoBehaviour:
   jumpBoost: 2
   minIncrease: 5
   maxIncrease: 10
+  pickUpTime: 10
+  colTime: 0
 --- !u!4 &666477043
 Transform:
   m_ObjectHideFlags: 0
