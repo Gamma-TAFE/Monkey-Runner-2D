@@ -9,7 +9,7 @@ public class MenuHandler : MonoBehaviour
     
     public void ChangeScene(int sceneIndex)
     {
-        SceneManager.LoadScene(sceneIndex)
+        SceneManager.LoadScene(sceneIndex);
     }
     
     public void ExitToDesktop()
@@ -17,7 +17,7 @@ public class MenuHandler : MonoBehaviour
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
-        Application.Quit()
+        Application.Quit();
 
 
 
