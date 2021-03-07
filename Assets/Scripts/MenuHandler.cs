@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MenuHandler : MonoBehaviour
 {
-   
+    public AudioMixer masterAudio;
+
+    public void ChangeVolume(float volume)
+    {
+        masterAudio.SetFloat("volume", volume);
+    }
     
     public void ChangeScene(int sceneIndex)
     {
