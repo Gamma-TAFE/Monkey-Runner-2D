@@ -40,6 +40,9 @@ public class MenuHandler : MonoBehaviour
 
 
     }
-    
+    public void Quality(int QualityIndex)
+    {
+        QualitySettings.SetQualityLevel(QualityIndex);
+    }
     
 }
