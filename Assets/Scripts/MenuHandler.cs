@@ -17,6 +17,18 @@ public class MenuHandler : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
+
+    public void ToggleMute(bool isMuted)
+    {
+        if(isMuted)
+        {
+            masterAudio.SetFloat("isMutedVolume", -80);
+        }
+        else
+        {
+            masterAudio.SetFloat("isMutedVolume", 0);
+        }
+    }
     
     public void ExitToDesktop()
     {
