@@ -61,19 +61,27 @@ public class MenuHandler : MonoBehaviour
         resolution.ClearOptions();
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
-        for(int i=0; i< resolutions.Length;i++)
+        for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width 
+            string option = resolutions[i].width
                 + "x" + resolutions[i].height;
             options.Add(option);
-            if (resolutions[i].width ==Screen.currentResolution.width 
-                && resolutions[i].height == Screen.currentResolution.height)
+            if (resolutions[i].width 
+                ==  Screen.currentResolution.width && resolutions[i].height  == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
 
-
-
         }
+        resolution.AddOptions(options);
+        resolution.value = currentResolutionIndex;
+        resolution.RefreshShownValue();
+        
+    }
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution res = resolutions[resolutionIndex];
+        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
+
     }
 }
