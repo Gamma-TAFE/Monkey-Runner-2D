@@ -7,24 +7,13 @@ public class PickUps : MonoBehaviour
     public float speedBoost = 5f;
     public float jumpBoost = 3f;
     public float boostTime = 5f;
-
-    public float minIncrease = 5f;
-    public float maxIncrease = 10f;
-    float increase;
-
-
-    void Start()
-    {
-        increase = Random.Range(minIncrease, maxIncrease);
-    }
+    public float coinCounter = 0f;
 
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
-
-
-        if (gameObject.CompareTag("Speed"))
+        #region Speed
+        if (gameObject.CompareTag("Speed"))                                             //Only activates for objects with Speed Tag
         {
             collision.gameObject.GetComponent<PlayerMovement>().speed += speedBoost;    //Finds float "speed" from player script and adds speed boost
             gameObject.GetComponent<SpriteRenderer>().enabled = false;                  //Disables Sprite
@@ -32,26 +21,58 @@ public class PickUps : MonoBehaviour
             StartCoroutine(SpeedReset());                                               //Starts timer for boost
         }
 
-        if (gameObject.CompareTag("Jump"))
-        {
-            collision.gameObject.GetComponent<PlayerMovement>().jumpForce += jumpBoost; //Finds float "jumpForce" from player script and adds jump boost
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;                  //Disables Sprite
-            gameObject.GetComponent<Collider2D>().enabled = false;                      //Disables Collider
-            StartCoroutine(JumpReset());                                                //Starts timer for boost
-        }
-
-       IEnumerator SpeedReset()
+        IEnumerator SpeedReset()
         {
             yield return new WaitForSeconds(boostTime);                                 //Waits for "boostTime" before stopping the boost
-            collision.gameObject.GetComponent<PlayerMovement>().speed -= speedBoost;
-            Destroy(gameObject);
+            collision.gameObject.GetComponent<PlayerMovement>().speed -= speedBoost;    //Removes boost
+            Destroy(gameObject);                                                        //Destroys Pickup
+        }
+        #endregion
+
+        #region Jump
+        if (gameObject.CompareTag("Jump"))                                              
+        {
+            collision.gameObject.GetComponent<PlayerMovement>().jumpForce += jumpBoost; 
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;                  
+            gameObject.GetComponent<Collider2D>().enabled = false;                      
+            StartCoroutine(JumpReset());                                                
         }
 
         IEnumerator JumpReset()
         {
+            yield return new WaitForSeconds(boostTime);                                 
+            collision.gameObject.GetComponent<PlayerMovement>().jumpForce -= jumpBoost; 
+            Destroy(gameObject);                                                        
+        }
+        #endregion
+        
+        #region Invincible
+        /*
+        if (gameObject.CompareTag("Invincible"))
+        {
+            collision.gameObject.GetComponent<PlayerMovement>().canDie = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(InvincibleReset());
+        }
+
+        IEnumerator InvincibleReset()
+        {
             yield return new WaitForSeconds(boostTime);
-            collision.gameObject.GetComponent<PlayerMovement>().jumpForce -= jumpBoost;
+            collision.gameObject.GetComponent<PlayerMovement>().canDie = true;
             Destroy(gameObject);
         }
+        */
+        #endregion
+        
+        #region Coin
+        /*
+        if (gameObject.CompareTag("Coin"))
+        {
+            collision.gameObject.GetComponent<PlayerMovement>().coinCounter++;                                                              //Adds 1 to coinCounter
+            Destroy(gameObject);
+        }
+        */
+        #endregion
     }
 }
