@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuHandler : MonoBehaviour
 {
     public AudioMixer masterAudio;
+
+    public Resolution[] resolutions;
+    public TMP_Dropdown resolution;
 
     public void ChangeVolume(float volume)
     {
@@ -52,8 +56,7 @@ public class MenuHandler : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
-    public Resolution[] resolutions;
-    public Dropdown resolution;
+    
 
     private void Start()
     {
