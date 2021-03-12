@@ -7,8 +7,6 @@ public class PickUps : MonoBehaviour
     public float speedBoost = 5f;
     public float jumpBoost = 3f;
     public float boostTime = 5f;
-    public float coinCounter = 0f;
-
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,7 +43,7 @@ public class PickUps : MonoBehaviour
             Destroy(gameObject);                                                        
         }
         #endregion
-        
+
         #region Invincible
         /*
         if (gameObject.CompareTag("Invincible"))
@@ -64,12 +62,13 @@ public class PickUps : MonoBehaviour
         }
         */
         #endregion
-        
+
         #region Coin
         /*
         if (gameObject.CompareTag("Coin"))
         {
-            collision.gameObject.GetComponent<PlayerMovement>().coinCounter++;                                                              //Adds 1 to coinCounter
+            gameObject.GetComponent<Coins>().coinCounter += 1;
+            gameObject.GetComponent<Coins>().UpdateCoinText();
             Destroy(gameObject);
         }
         */

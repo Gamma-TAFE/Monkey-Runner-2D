@@ -8,6 +8,7 @@ TagManager:
   - Speed
   - Jump
   - EndDevice
+  - Coin
   layers:
   - Default
   - TransparentFX
