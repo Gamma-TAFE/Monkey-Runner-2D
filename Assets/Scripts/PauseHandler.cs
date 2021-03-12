@@ -25,4 +25,31 @@ public class PauseHandler : MonoBehaviour
         Cursor.visible = false;
     }
 
+    private void Start()
+    {
+        UnPaused();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(optionsMenu.activeSelf)
+            {
+                optionsMenu.SetActive(false);
+                pauseMenu.SeActive(true);
+            }
+            else
+            {
+                isPaused = !isPaused;
+                if (isPaused)
+                {
+                    Paused();
+                }
+                else
+                {
+                    UnPaused();
+                }
+            }
+        }
+    }
 }
