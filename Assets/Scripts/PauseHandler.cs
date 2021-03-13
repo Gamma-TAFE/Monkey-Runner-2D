@@ -36,7 +36,7 @@ public class PauseHandler : MonoBehaviour
             if(optionsMenu.activeSelf)
             {
                 optionsMenu.SetActive(false);
-                pauseMenu.SeActive(true);
+                pauseMenu.SetActive(true);
             }
             else
             {
