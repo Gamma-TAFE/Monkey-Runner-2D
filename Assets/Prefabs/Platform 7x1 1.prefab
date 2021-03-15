@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 8185297035466157191}
   - component: {fileID: 8185297035466157188}
   - component: {fileID: 8185297035466157189}
-  - component: {fileID: -6284194287809356703}
+  - component: {fileID: -4475320402082588394}
   m_Layer: 0
   m_Name: Platform 7x1 1
   m_TagString: Ground
@@ -503,7 +503,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6284194287809356703
+--- !u!114 &-4475320402082588394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4aa1b32b4c7b245b04a97790689105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformDestructionPoint: {fileID: 8185297035466157190}
+  platformDestructionPoint: {fileID: 8991111178934231697, guid: 928c274bca29e524582d2c23ed8007c8, type: 3}
 --- !u!1 &8185297035823630464
 GameObject:
   m_ObjectHideFlags: 0

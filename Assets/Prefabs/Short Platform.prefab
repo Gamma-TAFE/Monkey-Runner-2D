@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 4746282361652223133}
   - component: {fileID: 5572035181215041744}
   - component: {fileID: 5804495897280761304}
+  - component: {fileID: -3368115192954674383}
   m_Layer: 0
   m_Name: Short Platform
   m_TagString: Ground
@@ -335,6 +336,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3368115192954674383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694649961924826749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4aa1b32b4c7b245b04a97790689105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformDestructionPoint: {fileID: 8991111178934231697, guid: 928c274bca29e524582d2c23ed8007c8, type: 3}
 --- !u!1 &6773952343647764612
 GameObject:
   m_ObjectHideFlags: 0
