@@ -12,8 +12,8 @@ public class PauseHandler : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+       // Cursor.lockState = CursorLockMode.None;
+       // Cursor.visible = true;
     }
 
     public void UnPaused()
@@ -21,8 +21,8 @@ public class PauseHandler : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.visible = false;
     }
 
     private void Start()
