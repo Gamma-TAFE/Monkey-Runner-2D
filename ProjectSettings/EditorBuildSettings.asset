@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Scene.unity
     guid: 1351d65d324c0814bbfdd57230eb6a87
+  - enabled: 1
+    path: Assets/Scenes/MonkeyRunner.unity
+    guid: 065eb6844046eac4ba8d84eed6553580
   m_configObjects: {}
