@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
     bool isgrounded = true;
     public GameManagement gameManagement;
 
+    private Animator myAnimator;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
 
+        myAnimator = GetComponent<Animator>();
     }
 
 
@@ -33,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
                 rb2d.velocity = Vector2.up * jumpForce;
             }
         }
+
+        myAnimator.SetFloat("Speed", rb2d.velocity.x);
+
+        myAnimator.SetBool("Grounded", isgrounded);
+
+
     }
 
     void OnCollisionEnter2D(Collision2D oncollision)
