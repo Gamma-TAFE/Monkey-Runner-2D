@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (oncollision.gameObject.CompareTag("EndDevice"))
+        if (oncollision.gameObject.CompareTag("KillBox"))
         {
             gameManagement.RestartGame();
         }
