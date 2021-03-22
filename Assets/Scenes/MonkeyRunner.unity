@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f09b65d37243d4fa671a1734fc741a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgSpeed: 2
+  bgSpeed: 0.01
   bgRend: {fileID: 760357434}
 --- !u!23 &760357434
 MeshRenderer:
@@ -1026,7 +1026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760357432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.72, y: 0.24, z: 0}
+  m_LocalPosition: {x: -8.27, y: 6.58, z: 0}
   m_LocalScale: {x: 26.238087, y: 10.044099, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
