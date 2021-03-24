@@ -1308,7 +1308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &491422917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f09b65d37243d4fa671a1734fc741a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgSpeed: 1
+  bgSpeed: -0.2
   bgRend: {fileID: 491422918}
 --- !u!23 &491422918
 MeshRenderer:
@@ -1379,12 +1379,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491422916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.32, y: 0.12, z: 0}
-  m_LocalScale: {x: -20.4, y: 11.368962, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0618237, y: -0.09428114, z: 22.545486}
+  m_LocalScale: {x: -5.483493, y: 4.6603417, z: 0.40991795}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492330862
 GameObject:
@@ -1621,6 +1621,7 @@ Transform:
   - {fileID: 329266842}
   - {fileID: 407778753}
   - {fileID: 760357436}
+  - {fileID: 491422920}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2323,7 +2324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &760357433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2357,7 +2358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e55a545235939e44fb70568cf915277b, type: 2}
+  - {fileID: 2100000, guid: 4c07087187b50dc469c5200f38dab081, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2395,8 +2396,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760357432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00032261194, y: 0.000778839, z: 22.545486}
-  m_LocalScale: {x: 4.7742443, y: 4.091318, z: 0.40991795}
+  m_LocalPosition: {x: 0.00032261194, y: 0.000778839, z: 150}
+  m_LocalScale: {x: 5.73, y: 4.091318, z: 0.40991795}
   m_Children: []
   m_Father: {fileID: 519420032}
   m_RootOrder: 2
