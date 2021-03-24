@@ -6,7 +6,7 @@ using UnityEngine;
 public class Restart : MonoBehaviour
 {
 
-    public void RestartGame()
+    public static void RestartGame()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

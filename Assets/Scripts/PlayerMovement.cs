@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
@@ -54,11 +55,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (oncollision.gameObject.CompareTag("EndDevice"))
         {
-            gameManagement.RestartGame();
+            //gameManagement.RestartGame();
+            Restart.RestartGame();
         }
-
     }
-
     private void OnCollisionExit2D(Collision2D offcollision)
     {
         if (offcollision.gameObject.CompareTag("Ground"))
