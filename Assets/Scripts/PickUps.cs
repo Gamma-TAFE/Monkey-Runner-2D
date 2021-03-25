@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickUps : MonoBehaviour
 {
     public float speedBoost = 5f;
     public float jumpBoost = 3f;
     public float boostTime = 5f;
+    public InGameUI bools;
+
+    private void Start()
+    {
+        GameObject boostHandler = GameObject.FindGameObjectWithTag("BoolKeeper");
+
+        bools = boostHandler.GetComponent<InGameUI>();
+    }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +26,7 @@ public class PickUps : MonoBehaviour
             collision.gameObject.GetComponent<PlayerMovement>().speed += speedBoost;    //Finds float "speed" from player script and adds speed boost
             gameObject.GetComponent<SpriteRenderer>().enabled = false;                  //Disables Sprite
             gameObject.GetComponent<Collider2D>().enabled = false;                      //Disables Collider
+            bools.speed = true;
             StartCoroutine(SpeedReset());                                               //Starts timer for boost
         }
 
@@ -23,6 +34,7 @@ public class PickUps : MonoBehaviour
         {
             yield return new WaitForSeconds(boostTime);                                 //Waits for "boostTime" before stopping the boost
             collision.gameObject.GetComponent<PlayerMovement>().speed -= speedBoost;    //Removes boost
+            bools.speed = false;
             Destroy(gameObject);                                                        //Destroys Pickup
         }
         #endregion
@@ -32,14 +44,16 @@ public class PickUps : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerMovement>().jumpForce += jumpBoost; 
             gameObject.GetComponent<SpriteRenderer>().enabled = false;                  
-            gameObject.GetComponent<Collider2D>().enabled = false;                      
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            bools.jump = true;
             StartCoroutine(JumpReset());                                                
         }
 
         IEnumerator JumpReset()
         {
-            yield return new WaitForSeconds(boostTime);                                 
-            collision.gameObject.GetComponent<PlayerMovement>().jumpForce -= jumpBoost; 
+            yield return new WaitForSeconds(boostTime);
+            collision.gameObject.GetComponent<PlayerMovement>().jumpForce -= jumpBoost;
+            bools.jump = false; 
             Destroy(gameObject);                                                        
         }
         #endregion

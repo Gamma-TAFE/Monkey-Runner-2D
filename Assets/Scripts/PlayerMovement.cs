@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     bool isgrounded = true;
     public GameManagement gameManagement;
 
+    public GameObject inGamePanel;
+    public GameObject gameOverPanel;
+
     private Animator myAnimator;
 
     void Start()
@@ -55,8 +58,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (oncollision.gameObject.CompareTag("EndDevice"))
         {
-            //gameManagement.RestartGame();
-            Restart.RestartGame();
+            Time.timeScale = 0;
+            inGamePanel.SetActive(false);
+            gameOverPanel.SetActive(true);
         }
     }
     private void OnCollisionExit2D(Collision2D offcollision)

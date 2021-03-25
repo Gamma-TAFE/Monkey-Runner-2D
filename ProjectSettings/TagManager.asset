@@ -9,6 +9,7 @@ TagManager:
   - Jump
   - EndDevice
   - Coin
+  - BoolKeeper
   layers:
   - Default
   - TransparentFX
