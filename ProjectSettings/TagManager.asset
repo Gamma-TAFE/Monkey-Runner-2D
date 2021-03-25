@@ -10,6 +10,12 @@ TagManager:
   - EndDevice
   - Coin
   - BoolKeeper
+  - Level Part 1
+  - Level Part 2
+  - Level Part 3
+  - Level Part 4
+  - Level Part 5
+  - Level Part 6
   layers:
   - Default
   - TransparentFX
@@ -17,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - BackGround
   - 
   - 
   - 

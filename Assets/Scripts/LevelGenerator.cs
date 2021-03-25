@@ -4,55 +4,48 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-
-    [SerializeField] private GameObject platformGenerationPoint;
-    public float distanceBetweenPlatforms;
-    public float playerDistanceBetweenPlatforms;
-
-    // SerializeField allows us to allocate a position to this variable even though its marked as Private
-
+    // SerializeField makes a private var accessable in Unity (eg. We have the same access as if we said - public GameObject player; -)
+    public const float distanceBetweenPlatforms = 30f;
+    public const float playerToLastPlat = 50f;
     [SerializeField] private GameObject player;
     [SerializeField] private Transform levelPartStart;
     [SerializeField] private List<Transform> levelPartList;
-    private Transform chosenLevelPart;
-    private Vector2 lastEndPosition;
-    private Vector2 nextStartPosition;
-    private Vector2 playerPosition;
+    private Vector3 lastEndPosition;
 
-    void Awake()
+
+   private void Awake()
     {
         lastEndPosition = levelPartStart.Find("EndPosition").position;
-        nextStartPosition = levelPartStart.Find("StartPosition").position;
+
+        int startingSpawnLevelParts = 1;
+        for (int i = 0; i < startingSpawnLevelParts; i++)
+        {
+            SpawnLevelPart();
+        }
+        
 
     }
 
     // Spawns more level parts if player gets too close to the lastEndPosition
-    void Update()
+    private void Update()
     {
-        playerPosition = player.transform.position;
-        if (Vector2.Distance(playerPosition, lastEndPosition) < playerDistanceBetweenPlatforms)
+        if (Vector3.Distance(player.transform.position, lastEndPosition) < playerToLastPlat)
         {
             SpawnLevelPart();
         }
-
     }
+
 
     // Spawns a level part and locates where the EndPosition of said spawned part is
     void SpawnLevelPart()
     {
-        chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
+        Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
         Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
-        Transform nextLevelPartTransform = SpawnLevelPart(chosenLevelPart, nextStartPosition);
         lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
-        nextStartPosition = nextLevelPartTransform.Find("StartPosition").position;
-        if (Vector2.Distance(lastEndPosition, nextStartPosition) < distanceBetweenPlatforms)
-        {
-            nextStartPosition = new Vector2(nextStartPosition.x + distanceBetweenPlatforms, transform.position.y);
-            Debug.Log(nextStartPosition);
-        }
+
     }
 
-    Transform SpawnLevelPart(Transform levelPart, Vector2 spawnPosition)
+    Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)
     {
         Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
         return levelPartTransform;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9102702705432880981}
   - component: {fileID: 9102702705432881002}
   - component: {fileID: 9102702705432880980}
+  - component: {fileID: -8198461241430568240}
   m_Layer: 0
   m_Name: Jump
   m_TagString: Jump
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9102702705432881000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0299995, y: -2.1499999, z: 0}
+  m_LocalPosition: {x: -3.0299995, y: -2.1499999, z: 5}
   m_LocalScale: {x: 0.51, y: 0.51, z: 0.51}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,3 +116,17 @@ MonoBehaviour:
   speedBoost: 5
   jumpBoost: 3
   boostTime: 5
+  bools: {fileID: 0}
+--- !u!114 &-8198461241430568240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102702705432881000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4aa1b32b4c7b245b04a97790689105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformDestructionPoint: {fileID: 8991111178934231697, guid: 928c274bca29e524582d2c23ed8007c8, type: 3}
