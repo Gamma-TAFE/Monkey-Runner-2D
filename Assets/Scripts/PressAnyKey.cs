@@ -15,7 +15,7 @@ public class PressAnyKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("escape"))
+        if (Input.anyKey)
         {
             menuPanel.SetActive(true);
             pressAnyKeyPanel.SetActive(false);
